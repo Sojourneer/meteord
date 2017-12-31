@@ -1,6 +1,8 @@
 set -e
 
+echo installing libxmljs-mt
 npm install libxmljs-mt@0.18.3 --save
+echo done installing libxmljs-mt
 
 if [ -d /bundle ]; then
   cd /bundle
