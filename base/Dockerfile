@@ -8,12 +8,12 @@ ARG NODE_VERSION
 ENV NODE_VERSION ${NODE_VERSION:-4.8.6}
 ONBUILD ENV NODE_VERSION ${NODE_VERSION:-4.8.6}
 
-RUN bash $METEORD_DIR/lib/install_binbuild_tools.sh
-
 RUN bash $METEORD_DIR/lib/install_base.sh
 RUN bash $METEORD_DIR/lib/install_node.sh
 RUN bash $METEORD_DIR/lib/install_phantomjs.sh
 RUN bash $METEORD_DIR/lib/cleanup.sh
+
+RUN bash $METEORD_DIR/lib/install_binbuild_tools.sh
 
 EXPOSE 80
 ENTRYPOINT bash $METEORD_DIR/run_app.sh
